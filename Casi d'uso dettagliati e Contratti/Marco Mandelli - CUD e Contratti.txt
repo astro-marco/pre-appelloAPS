@@ -1,0 +1,94 @@
+Marco Mandelli 890078
+
+
+CASI D'USO:
+
+Notifica Nuovi Pacchetti
+Nome del Caso d’Uso: NotificaNuoviPacchetti
+Portata: Sistema software basato sul Web per agenzie di viaggi
+Livello: Obiettivo Cliente
+Attore Primario: Cliente
+Parti Interessate e Interessi:
+Cliente: vuole essere notificato dal Sistema quando vengono aggiunti nuovi pacchetti vacanza per le località di suo interesse.
+Pre-condizioni: Il Cliente è registrato e autenticato.
+Garanzia di successo: Il Cliente riceverà una notifica se verrà aggiunto un pacchetto vacanza per una località a suo interesse.
+Scenario Principale di Successo:
+	1) Il Cliente naviga alla sezione delle preferenze di notifica.
+	2) Il Cliente seleziona le località per cui desidera ricevere notifiche sui nuovi pacchetti vacanza.
+	3) Il Cliente seleziona la frequenza massima con la quale vuole ricevere notifiche (immediata, giornaliera, settimanale, mensile, bimestrale, trimestrale, semestrale)
+	4) Il Cliente conferma le sue preferenze di notifica.
+	5) Il Sistema salva le preferenze di notifica del Cliente.
+	6) Quando un nuovo pacchetto vacanza viene aggiunto e contiene una località di interesse del Cliente, il Sistema invia una notifica al Cliente.
+	7) Il Cliente riceve la notifica del nuovo pacchetto vacanza via email e/o attraverso il Sistema.
+Estensioni:
+	3a. Il Cliente seleziona una frequenza che non è quella istantanea.
+		3a1. Il Sistema avvisa al Cliente che la notifica inviata sarà un riepilogo 
+che potrà mostrare più pacchetti per una stessa località.
+	4a. Il Cliente prova a confermare senza aver selezionato alcuna località di interesse.
+		4a1. Il Sistema rifiuta la conferma e informa il Cliente che deve selezionare
+almeno una località per ricevere notifiche.
+		4a2. Si riprende dal punto 2.
+
+Requisiti Speciali:
+	- L’elenco delle località selezionabili deve essere visualizzato entro 1 secondo.
+	- La notifica dell’inserimento di un nuovo pacchetto dovrà avvenire entro 6 ore dallo stesso.
+
+Frequenza di Ripetizione: Potrebbe essere quasi ininterrotta, dipende dalla frequenza con cui vengono aggiunti nuovi pacchetti
+
+Varie: nessuna
+
+
+
+
+Inserisci Recensione
+Nome del Caso d’Uso: InserisciRecensione
+Portata: Sistema software basato sul Web per agenzie di viaggi
+Livello: Obiettivo Cliente
+Attore Primario: Cliente
+Parti Interessate e Interessi:
+Cliente: ha acquistato e usufruito di un pacchetto vacanza e desidera condividere la propria esperienza tramite una recensione.
+Pre-condizioni:
+Il Cliente è autenticato nel Sistema.
+Il Cliente deve aver completato l'acquisto e usufruito del pacchetto vacanza.
+Garanzia di successo: Il Sistema pubblica una recensione del Cliente riguardante il pacchetto vacanza di cui il Cliente ha già usufruito.
+
+Scenario Principale di Successo:
+	1) Il Cliente accede alla sezione “I miei acquisti”.
+	2) Il Sistema presenta al Cliente l’elenco dei pacchetti acquistati.
+	3) Il Cliente seleziona il pacchetto vacanza per cui desidera inserire una recensione.
+	4) Il Sistema presenta un modulo di inserimento recensione con campi per titolo, testo della recensione, e rating (da 1 a 5 stelle).
+	5) Il Cliente compila il modulo e invia la recensione.
+	6) Il Sistema verifica che tutti i campi obbligatori siano stati compilati e che il rating sia valido.
+	7) Il Sistema memorizza la recensione nel database e conferma l'inserimento al Cliente.
+	8) Il Cliente riceve una conferma dell'avvenuto inserimento della recensione.
+
+Estensioni:
+	3a. Il Cliente seleziona un pacchetto vacanza il cui periodo di soggiorno (in particolare 
+la data di fine) è nel futuro o nel presente.
+		3a1. Il Sistema non permette di aprire il modulo di inserimento recensione.
+
+	5a. Il Cliente lascia dei campi obbligatori vuoti o non inserisce un rating.
+		5a1. Il Sistema mostra un messaggio di errore e richiede al Cliente di 
+completare i campi mancanti
+
+Requisiti Speciali:
+	- Le recensioni devono essere moderate per evitare la pubblicazione di contenuti inappropriati.
+	- La recensione può essere modificata solo entro i 30 giorni dalla sua pubblicazione.
+
+Frequenza di Ripetizione: Potrebbe essere quasi ininterrotta
+
+Varie: nessuna
+
+
+
+
+
+CONTRATTI:
+
+Contratto inserisciRecensione
+Operazione: inserisciRecensione()
+Riferimenti caso d’uso: Inserisci Recensione
+Precondizioni: il Cliente c ha selezionato un’istanza vp di Pacchetto vacanze il cui periodo di soggiorno è già passato.
+Postcondizioni:
+	- È stata creata un’istanza re di Recensione
+	- Gli attributi di re sono stati inizializzati

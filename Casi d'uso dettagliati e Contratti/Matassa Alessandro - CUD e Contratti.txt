@@ -1,0 +1,212 @@
+Matassa Alessandro 894645
+
+
+CASI D'USO:
+
+Effettua Modifica
+Caso d'uso: EffettuaModifica
+Portata: Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente
+Attore Primario: Cliente
+Parti Interessate e Interessi:
+	-il Cliente vuole modificare la sua prenotazione cambiando il numero dei partecipanti e magari anche i partecipanti stessi
+
+Pre-condizioni:
+	-Il Cliente è autenticato 
+	-Il Cliente ha effettuato una prenotazione
+
+Garanzia di successo: La prenotazione è stata modificata
+
+Scenario principale di successo:
+	1) Il Cliente clicca per aprire il form per modificare la prenotazione
+	2) Il form si apre
+	3) Il Cliente inserisce i nuovi partecipanti/rimuove quelli che non vuole più/ cambia i dati dei partecipanti già esistenti
+	4) La prenotazione viene aggiornata con le nuove modifiche e con il prezzo aggiornato
+	5) Il Cliente riceve una notifica che conferma l’avvenuto cambiamento
+
+
+Estensioni:
+	2a) Una notifica informa il Cliente che i termini per modificare direttamente la richiesta sono scaduti, bisogna fare richiesta tramite un Operatore
+
+Requisiti speciali:
+	-il Sistema aggiorna la prenotazione entro 5 secondi
+	-Il Sistema deve garantire la sicurezza e la riservatezza dei dati personali degli utenti.
+	-Il Sistema deve essere conforme alle normative vigenti in materia di protezione dei dati.
+	-L'interfaccia utente deve essere intuitiva e facile da usare per gli operatori.
+	
+Elenco delle varianti tecnologiche e dei dati: Nessuna.
+
+Frequenza di Ripetizione: il caso d’uso viene eseguito tutte le volte che un Cliente prova a modificare una prenotazione
+
+
+
+
+Effettua Cancellazione
+Caso d'uso: EffettuaCancellazione
+Portata: Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente
+Attore Primario: Cliente
+Parti Interessate e Interessi:
+	-il Cliente vuole cancellare la sua prenotazione
+Pre-condizioni:
+	-Il Cliente è autenticato 
+	-Il Cliente ha effettuato una prenotazione
+Garanzia di successo: La prenotazione è stata cancellata
+Scenario principale di successo:
+	1) Il Cliente clicca per cancellare la prenotazione
+	2) Il Sistema notifica che procedendo con la cancellazione il rimborso non sarà garantito
+	3) Il Cliente clicca per procedere
+	4) La prenotazione viene cancellata e lo stato di quest’ultima viene aggiornato
+	5) Una richiesta di rimborso per la caparra pagata viene inoltrata all'Operatore
+	6) Il Cliente riceve una notifica che conferma l’avvenuta cancellazione
+	7) a tempo debito riceverà anche una notifica che comunicherà se il Cliente ha diritto a un rimborso
+
+Estensioni:
+	3.A) Il Cliente sceglie di tornare indietro
+	3A.1) Il Cliente ritorna alla home
+
+Requisiti speciali:
+	-il Sistema cancella la prenotazione entro 5 secondi
+	-Il Sistema deve garantire la sicurezza e la riservatezza dei dati personali degli utenti.
+	-Il Sistema deve essere conforme alle normative vigenti in materia di protezione dei dati.
+	-L'interfaccia utente deve essere intuitiva e facile da usare per gli operatori.
+
+Elenco delle varianti tecnologiche e dei dati: Nessuna.
+
+Frequenza di Ripetizione: il caso d’uso viene eseguito tutte le volte che un Cliente prova a cancellare una prenotazione
+
+
+
+
+Chiedi Modifica
+Caso d'uso: ChiediModifica
+Portata: Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente		
+Attore primario: Operatore
+Parti interessati e interesse: L’Operatore intende analizzare le richieste di modifica fatte dai clienti al fine di verificare se le modifiche sono o meno conformi. 
+L’interesse del Cliente è nella verifica e approvazione della sua richiesta.
+
+pre-condizioni:			
+	-Il Cliente ha effettuato una prenotazione
+	-Il Cliente deve aver fatto richiesta di modifica di una prenotazione entro le scadenze 
+	-L’Operatore deve essere autenticato
+
+Garanzia di successo: È stata verificata una richiesta di modifica ed è stata approvata dall’Operatore
+
+Scenario principale di successo:
+	1) L’Operatore legge la richiesta di modifica e la prende in carico
+	2) L’Operatore contatta la compagnia ferroviaria/aerea e il tour operator
+	3) L’ente esterno approva la richiesta e effettua la modifica				
+	4) L’Operatore cambia il numero dei partecipanti nel Sistema e aggiorna il costo
+	5) L’Operatore approva la richiesta 
+	6) L’Operatore notifica l’esito al Cliente 
+
+Estensioni:
+	3a) Uno o più enti esterni rifiutano la modifica:
+	3a.1) La compagnia ferroviaria/aerea e/o il tour operator non approvano la richiesta per mancanza di posti
+	3a.2) L’Operatore rifiuta la richiesta 
+	3a.3) L’Operatore notifica l’esito al Cliente
+
+	3b) Il Cliente vuole cancellare una prenotazione  e viene accettata la modifica
+	3b.1) La compagnia ferroviaria/aerea e il tour operator approvano il rimborso 				
+	3b.2) L’Operatore contatta l’istituto di credito per restituire i soldi al Cliente 
+	3b.3) L’Operatore invia l’esito positivo al Cliente
+	3b.4) L’Operatore aggiorna la rinnovata disponibilità dei viaggi
+
+	3c) Il Cliente vuole cancellare una prenotazione e viene rifiutata la modifica
+	3c.1) La compagnia ferroviaria/aerea e il tour operator rifiutano il rimborso
+	3c.2) L’Operatore non annulla la prenotazione
+	3c.3) L’Operatore rifiuta la richiesta				
+
+Requisiti speciali:		
+	-Il Sistema aggiorna la prenotazione entro 5 secondi.
+	-Il Sistema deve garantire la sicurezza e la riservatezza dei dati personali degli utenti.
+	-Il Sistema deve essere conforme alle normative vigenti in materia di protezione dei dati.
+	-L'interfaccia utente deve essere intuitiva e facile da usare per gli operatori.
+
+Frequenza di ripetizione:   
+Il caso d’uso viene eseguito tutte le volte che un Cliente apre una richiesta di modifica di una prenotazione
+
+
+
+
+Chiedi Cancellazione
+ChiediCancellazione
+Portata:  Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente		
+Attore primario: Operatore
+Parti interessate e interesse:	
+L’Operatore intende analizzare la richieste di cancellazione fatte dai clienti al fine di verificare se è possibile avviare una procedura di rimborso
+L’interesse del Cliente è nella verifica e approvazione della sua richiesta.
+Pre-condizioni:				
+	-Il Cliente ha effettuato una prenotazione
+	-Il Cliente deve aver fatto richiesta di cancellazione di una prenotazione entro le scadenze 
+	-L’Operatore deve essere autenticato
+
+Garanzia di successo: È stata verificata una richiesta di cancellazione ed è stata approvata dall’Operatore con la relativa procedura di rimborso
+ 
+Scenario Principale di successo:
+	1) L’Operatore legge la richiesta di cancellazione e la prende in carico
+	2) L’Operatore contatta la compagnia ferroviaria/aerea e il tour operator
+	3) La compagnia ferroviaria/aerea e il tour operator approvano il rimborso
+	4) L’Operatore cancella la prenotazione
+	5) L’Operatore contatta l’istituto di credito per restituire i soldi al Cliente	
+	6) L’Operatore approva la richiesta 
+	7) L’Operatore notifica l’esito al Cliente 
+
+Estensioni:
+	3c.1) La compagnia ferroviaria/aerea e il tour operator rifiutano il rimborso
+	3c.2) L’Operatore non annulla la prenotazione
+	3c.3) L’Operatore rifiuta la richiesta
+	3c.4) L’Operatore notifica l’esito al Cliente affermando che se vuole comunque cancellare la prenotazione può farlo manualmente						
+
+Requisiti speciali:			
+	-Il Sistema aggiorna la prenotazione entro 5 secondi.
+	-Il Sistema deve garantire la sicurezza e la riservatezza dei dati personali degli utenti.
+	-Il Sistema deve essere conforme alle normative vigenti in materia di protezione dei dati.
+	-L'interfaccia utente deve essere intuitiva e facile da usare per gli operatori.
+
+Frequenza di ripetizione:   
+Il caso d’uso viene eseguito tutte le volte che un Cliente apre una richiesta di cancellazione di una prenotazione
+
+
+
+
+ChiedeInfo
+Portata: Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente
+Attore primario: Cliente
+Parti interessate e interesse: il cliente intende ottenere informazioni dettagliate su un prodotto disponibile tramite comunicazione con un operatore
+Pre-condizioni: Il cliente deve essere autenticato nel sistema
+Garanzia di successo: Il cliente invia con successo un messaggio a un operatore per poter comunicare il suo dubbio
+Scenario Principale di successo:
+	1) Il cliente seleziona un pacchetto/viaggio di interesse.
+	2) Il sistema web visualizza una pagina con le informazioni dettagliate del prodotto
+	3) Il cliente clicca sul modulo di contatto per contattare un operatore e scrive la sua domanda
+	4) Il cliente invia il messaggio
+	5) Il sistema notifica il cliente che la sua domanda è stata inoltrata a un operatore e sarà presa in esame
+
+Estensioni:
+	6a) dopo 72h lavorative senza risposta il sistema notifica il cliente che gli operatori sono occupati e non possono rispondere
+
+Requisiti speciali:
+	-Il sistema deve essere disponibile 24/7.
+	-Il sistema deve garantire la sicurezza e la riservatezza dei dati personali del cliente.
+	-L'interfaccia utente deve essere intuitiva e facile da usare per i clienti.
+	-Il sistema deve essere conforme alle normative vigenti in materia di protezione dei dati.
+
+Frequenza di ripetizione:
+Il caso d’uso viene eseguito tutte le volte che un cliente desidera ottenere informazioni su un pacchetto disponibile sul sito web.
+
+
+
+
+
+Contratto RichiedeRimborso
+Operazione: RichiedeRimborso(codicePrenotazione)
+Riferimenti caso d'uso: EffettuaCancellazione
+Precondizioni: Il Sistema ha cancellato una prenotazione p e l’ha aggiornata con lo status CancellataDaGestire 
+Postcondizioni: (scenario principale):
+   - Una entità richiesta r è stata istanziata con l’attributo tipologia “rimborsoPerCancellazione”
+   - r è stata associata alla prenotazione p
+   - un operatore è stato notificato della richiesta
