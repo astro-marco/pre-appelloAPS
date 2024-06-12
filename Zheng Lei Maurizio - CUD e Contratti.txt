@@ -1,0 +1,93 @@
+Zheng Lei Maurizio 866251
+
+
+CASI D'USO:
+
+Caso d'uso: MonitoraPrenotazioni
+Portata: Sistema software basato sul web per agenzie di viaggi
+Livello: Obiettivo utente
+Attore Primario: Amministratore
+Parti Interessate e Interessi:
+	- Amministratore: Vuole monitorare l'andamento delle prenotazioni per località, tipoligia di viaggio e/o di alloggio.
+
+Pre-condizioni: L'amministratore è autenticato.
+
+Garanzia di successo: Il sistema mostra all'amministratore l'andamento delle prenotazioni in base al filtro selezionato.
+
+Scenario principale di successo:
+	1) L'amministratore seleziona l'opzione di visulizzare le prenotazioni effettuate.
+	2) Il sistema mostra l'elenco delle prenotazioni.
+	3) L'amministratore filtra le prenotazioni con una località, tipologia di viaggio e di alloggio.
+	4) Il sistema mostra l'elenco filtrato in base alle opzioni selezionate dall'amministratore.
+
+Estensioni:
+	3a) L'amministratore filtra solo con una località e una tipologia di viaggio:
+	3b) L'amministratore filtra solo con una localita e una tipologia di alloggio:
+	3c) L'amministratore filtra solo con una tipologia di viaggio e di alloggio:
+	3d) L'amministratore filtra solo con una località:
+	3e) L'amministratore filtra solo con una tipologia di viaggio:
+	3f) L'amministratore filtra solo con una alla tipologio di alloggio.
+
+	4a) Non ci sono prenotazioni effettuate con i filtri selezionati:
+		1) Il sistema mostra un elenco vuoto, con un messaggio di assenza di prenotazioni.
+	4b) L'amministratore vuole creare un report delle prenotazioni filtrate:
+		1) Extend: ProduciReport.
+
+Requisiti speciali:
+	- L'elenco filtrato deve essere mostrato entro 3 secondi.
+
+Elenco delle varianti tecnologiche e dei dati: Nessuna.
+
+Frequenza di Ripetizione: Potrebbe essere quasi ininterrotta.
+
+Problemi aperti: Nessuno.
+
+
+
+
+Caso d'uso: ProduciReport
+Portata: Sistema software basato su web per agenzie di viaggi
+Livello: Obiettivo utente
+Attore Primario: Amministratore
+Parti Interessate e Interessi:
+	- Amministratore: Vuole creare un report delle prenotazioni.
+
+Pre-condizioni: L'amministratore è autenticato e il sistema sta mostrando un elenco filtrato delle prenotazioni effettuate da MonitoraPrenotazioni
+
+Garanzia di successo: Il report viene creato dal sistema.
+
+Scenario principale di successo:
+	1) L'amministratore seleziona l'opzione di creare un report delle prenotazioni filtrate.
+	2) Il sistema mostra una finestra per inserire un commento.
+	3) L'amministratore inserisce un commento e conferma.
+	4) Il sistema crea il report e lo mostra a video.
+
+
+Estensioni:
+	3a) L'amministratore non inserisce un commento e conferma.
+	4a) La creazione del report fallisce per un error:
+		1) La creazione del report si interrompe, informando l'amministratore, e conclude.
+
+Requisiti speciali:
+	- La creazione del report deve avvenire entro 10 secondi.
+
+Elenco delle varianti tecnologiche e dei dati:
+	3) Il tipo di file del report potrà differrire.
+
+Frequenza di Ripetizione: Potrebbe essere quasi ininterrotta.
+
+Problemi aperti: la creazione automatica di un report da più reports.
+
+
+
+
+CONTRATTI:
+
+Contratto creaReport
+Operazione: creaReport(prenotazioni: Prenotazione[])
+Riferimenti caso d'uso: ProduciReport
+Precondizioni: è in corso la creazione di un nuovo report dall'Amministratore a
+Postcondizioni:
+	- È stata creata un'istanza r di Report (creazione di oggetto)
+	- Gli attributi di r sono stati inizializzati (modifica di attributi)
+	- r.prenotazioni è diventato prenotazioni (modifica di attributo)	
